@@ -34,7 +34,7 @@ cd_musicas(M):- % junção
 	
 % Questão 11:
 % Qual das seguintes alternativas poderia
-% ser a ordem das m´usicas no CD, da primeira
+% ser a ordem das músicas no CD, da primeira
 % para a s´etima faixa?
 % (A) T, W, V, S, Y, X, Z : false
 % (B) V, Y, T, S, W, Z, X : false
