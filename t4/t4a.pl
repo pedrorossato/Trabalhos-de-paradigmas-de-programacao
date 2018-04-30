@@ -33,11 +33,11 @@ cd_musicas(M):- % junção
 	regra6(SR).
 	
 % Questão 11:
-Qual das seguintes alternativas poderia
-ser a ordem das m´usicas no CD, da primeira
-para a s´etima faixa?
-(A) T, W, V, S, Y, X, Z : false
-(B) V, Y, T, S, W, Z, X	: false
-(C) X, Y, W, S, T, Z, S	: false
-(D) Y, T, W, S, X, Z, V : true
-(E) Z, T, X, W, V, Y, S : false
+% Qual das seguintes alternativas poderia
+% ser a ordem das m´usicas no CD, da primeira
+% para a s´etima faixa?
+% (A) T, W, V, S, Y, X, Z : false
+% (B) V, Y, T, S, W, Z, X : false
+% (C) X, Y, W, S, T, Z, S : false
+% (D) Y, T, W, S, X, Z, V : true
+% (E) Z, T, X, W, V, Y, S : false
