@@ -18,17 +18,13 @@ regra2(ST):-
 	F=\=6.
 regra3(ST):- 
 	nth0(D,ST,d),
-	nth0(C,ST,c),
 	D=:=1,
 	nextto(d,c,ST).
 regra4(ST):-
 	nth0(E,ST,e),
-	nth0(F,ST,f),
 	E=:=4,
 	nextto(e,f,ST).
 regra5(ST):-
-	nth0(B,ST,b),
-	nth0(C,ST,c),
 	nextto(c,b,ST).
 
 showdetalentos(ST):-
