@@ -10,19 +10,19 @@
 %• B deve se apresentar no turno imediatamente após o turno em que C se apresentar.
 regra1(ST):-
 	nth0(A,ST,a),
-	A=:=3,
-	A=:=5.
+	A=:=2,
+	A=:=4.
 regra2(ST):-
 	nth0(F,ST,f),
-	F=\=4,
-	F=\=6.
+	F=\=3,
+	F=\=5.
 regra3(ST):- 
 	nth0(D,ST,d),
-	D=:=1,
+	D=:=0,
 	nextto(d,c,ST).
 regra4(ST):-
 	nth0(E,ST,e),
-	E=:=4,
+	E=:=3,
 	nextto(e,f,ST).
 regra5(ST):-
 	nextto(c,b,ST).
@@ -40,4 +40,4 @@ showdetalentos(ST):-
 %(B) F,D,E,G,A,C,B
 %(C) F,D,A,E,C,B,G
 %(D) C,B,A,G,E,F,D
-%(E) C,B,F,A,G,E,D
+%(E) C,B,F,A,G,E,D 
