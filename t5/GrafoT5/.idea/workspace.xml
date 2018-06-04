@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="GrafoT5" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="f9b7fce5-8fdc-443e-ae35-2e6036f21775" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -15,28 +20,25 @@
       <file leaf-file-name="GrafoMain.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GrafoMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2023">
-              <caret line="119" column="32" lean-forward="true" selection-start-line="119" selection-start-column="32" selection-end-line="119" selection-end-column="32" />
+            <state relative-caret-position="234">
+              <caret line="187" column="120" selection-start-line="187" selection-start-column="120" selection-end-line="187" selection-end-column="120" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2198#2206#0" expanded="true" />
-                <element signature="e#2247#2253#0" expanded="true" />
-                <element signature="e#4573#4574#0" expanded="true" />
-                <element signature="e#4620#4621#0" expanded="true" />
-                <element signature="e#4745#4746#0" expanded="true" />
-                <element signature="e#4793#4794#0" expanded="true" />
-                <element signature="e#4919#4920#0" expanded="true" />
-                <element signature="e#4968#4969#0" expanded="true" />
-                <element signature="e#9005#9006#0" expanded="true" />
-                <element signature="e#9033#9034#0" expanded="true" />
+                <element signature="e#2627#2635#0" expanded="true" />
+                <element signature="e#2682#2688#0" expanded="true" />
+                <element signature="e#2591#2599#0" expanded="true" />
+                <element signature="e#2672#2680#0" expanded="true" />
+                <element signature="e#5222#5223#0" expanded="true" />
+                <element signature="e#5269#5270#0" expanded="true" />
+                <element signature="e#5394#5395#0" expanded="true" />
+                <element signature="e#5441#5442#0" expanded="true" />
+                <element signature="e#5567#5568#0" expanded="true" />
+                <element signature="e#5615#5616#0" expanded="true" />
+                <element signature="e#10845#10846#0" expanded="true" />
+                <element signature="e#10873#10874#0" expanded="true" />
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="grafo.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grafo.html">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -48,14 +50,20 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>CenterX</find>
+    </findStrings>
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Vertice.java" />
         <option value="$PROJECT_DIR$/src/verticeclass.java" />
         <option value="$PROJECT_DIR$/grafo.svg" />
         <option value="$PROJECT_DIR$/grafo.html" />
         <option value="$PROJECT_DIR$/src/toHex.java" />
+        <option value="$PROJECT_DIR$/src/Aresta.java" />
+        <option value="$PROJECT_DIR$/src/Vertice.java" />
         <option value="$PROJECT_DIR$/src/GrafoMain.java" />
       </list>
     </option>
@@ -80,8 +88,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -89,15 +95,12 @@
               <item name="GrafoT5" type="b2602c69:ProjectViewProjectNode" />
               <item name="GrafoT5" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="GrafoT5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GrafoT5" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -107,6 +110,9 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../paint" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -182,11 +188,14 @@
       <workItem from="1527872045756" duration="14785000" />
       <workItem from="1527910198931" duration="272000" />
       <workItem from="1527973030465" duration="48048000" />
+      <workItem from="1528075606836" duration="334000" />
+      <workItem from="1528076029185" duration="975000" />
+      <workItem from="1528129025498" duration="17663000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63739000" />
+    <option name="totallyTimeSpent" value="82711000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -197,16 +206,17 @@
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50073206" side_tool="true" weight="0.24413146" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3286385" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49926794" weight="0.24413146" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
       <window_info content_ui="combo" id="Project" order="0" weight="0.24963397" />
       <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286385" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
@@ -218,7 +228,6 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,115 +239,30 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/GrafoMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2142">
-          <caret line="126" column="21" lean-forward="true" selection-start-line="126" selection-start-column="21" selection-end-line="126" selection-end-column="21" />
+        <state relative-caret-position="391">
+          <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2198#2206#0" expanded="true" />
-            <element signature="e#2247#2253#0" expanded="true" />
-            <element signature="e#4573#4574#0" expanded="true" />
-            <element signature="e#4620#4621#0" expanded="true" />
-            <element signature="e#4745#4746#0" expanded="true" />
-            <element signature="e#4793#4794#0" expanded="true" />
-            <element signature="e#4919#4920#0" expanded="true" />
-            <element signature="e#4968#4969#0" expanded="true" />
-            <element signature="e#9005#9006#0" expanded="true" />
-            <element signature="e#9033#9034#0" expanded="true" />
+            <element signature="e#2627#2635#0" expanded="true" />
+            <element signature="e#2682#2688#0" expanded="true" />
+            <element signature="e#2591#2599#0" expanded="true" />
+            <element signature="e#2672#2680#0" expanded="true" />
+            <element signature="e#5222#5223#0" expanded="true" />
+            <element signature="e#5269#5270#0" expanded="true" />
+            <element signature="e#5394#5395#0" expanded="true" />
+            <element signature="e#5441#5442#0" expanded="true" />
+            <element signature="e#5567#5568#0" expanded="true" />
+            <element signature="e#5615#5616#0" expanded="true" />
+            <element signature="e#10845#10846#0" expanded="true" />
+            <element signature="e#10873#10874#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GrafoMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="59" column="43" selection-start-line="59" selection-start-column="43" selection-end-line="59" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2198#2206#0" expanded="true" />
-            <element signature="e#2247#2253#0" expanded="true" />
-            <element signature="e#4573#4574#0" expanded="true" />
-            <element signature="e#4620#4621#0" expanded="true" />
-            <element signature="e#4745#4746#0" expanded="true" />
-            <element signature="e#4793#4794#0" expanded="true" />
-            <element signature="e#4919#4920#0" expanded="true" />
-            <element signature="e#4968#4969#0" expanded="true" />
-            <element signature="e#9005#9006#0" expanded="true" />
-            <element signature="e#9033#9034#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GrafoMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="19" selection-start-column="19" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2198#2206#0" expanded="true" />
-            <element signature="e#2247#2253#0" expanded="true" />
-            <element signature="e#4573#4574#0" expanded="true" />
-            <element signature="e#4620#4621#0" expanded="true" />
-            <element signature="e#4745#4746#0" expanded="true" />
-            <element signature="e#4793#4794#0" expanded="true" />
-            <element signature="e#4919#4920#0" expanded="true" />
-            <element signature="e#4968#4969#0" expanded="true" />
-            <element signature="e#9005#9006#0" expanded="true" />
-            <element signature="e#9033#9034#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Vertice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="5" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#124#132#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/verticeclass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="53" selection-start-line="5" selection-start-column="53" selection-end-line="5" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#134#142#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grafo.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5151" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/toHex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="5" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="10" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grafo.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="282" column="15" selection-start-line="282" selection-start-column="15" selection-end-line="282" selection-end-column="15" />
-          <folding>
-            <element signature="e#10586#10587#0" expanded="true" />
-            <element signature="e#10613#10614#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="391">
+          <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -346,21 +270,167 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2023">
           <caret line="119" column="32" lean-forward="true" selection-start-line="119" selection-start-column="32" selection-end-line="119" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GrafoMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2142">
+          <caret line="126" column="21" lean-forward="true" selection-start-line="126" selection-start-column="21" selection-end-line="126" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GrafoMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1003">
+          <caret line="59" column="43" selection-start-line="59" selection-start-column="43" selection-end-line="59" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GrafoMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="19" selection-start-column="19" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/verticeclass.java" />
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5151" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/toHex.java" />
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="282" column="15" selection-start-line="282" selection-start-column="15" selection-end-line="282" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Aresta.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="37" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Vertice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grafo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2198#2206#0" expanded="true" />
-            <element signature="e#2247#2253#0" expanded="true" />
-            <element signature="e#4573#4574#0" expanded="true" />
-            <element signature="e#4620#4621#0" expanded="true" />
-            <element signature="e#4745#4746#0" expanded="true" />
-            <element signature="e#4793#4794#0" expanded="true" />
-            <element signature="e#4919#4920#0" expanded="true" />
-            <element signature="e#4968#4969#0" expanded="true" />
-            <element signature="e#9005#9006#0" expanded="true" />
-            <element signature="e#9033#9034#0" expanded="true" />
+            <element signature="n#style#0;n#line#0;n#svg#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#line#0;n#svg#4;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#line#0;n#svg#5;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/GrafoMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="187" column="120" selection-start-line="187" selection-start-column="120" selection-end-line="187" selection-end-column="120" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2627#2635#0" expanded="true" />
+            <element signature="e#2682#2688#0" expanded="true" />
+            <element signature="e#2591#2599#0" expanded="true" />
+            <element signature="e#2672#2680#0" expanded="true" />
+            <element signature="e#5222#5223#0" expanded="true" />
+            <element signature="e#5269#5270#0" expanded="true" />
+            <element signature="e#5394#5395#0" expanded="true" />
+            <element signature="e#5441#5442#0" expanded="true" />
+            <element signature="e#5567#5568#0" expanded="true" />
+            <element signature="e#5615#5616#0" expanded="true" />
+            <element signature="e#10845#10846#0" expanded="true" />
+            <element signature="e#10873#10874#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>GrafoT5</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>10</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>GrafoT5</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
