@@ -3,6 +3,7 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.input.MouseEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -22,6 +23,7 @@ import javafx.scene.text.*;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 
+import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.io.FileWriter;
@@ -31,16 +33,22 @@ public class GrafoMain extends Application {
     private Circle Vertice;
     private Line Aresta;
     private boolean estadoatual;
-    private boolean intersec1;
+    private boolean adicionado;
+    private Integer arestasSP=0;
     @Override
     public void start(Stage stage) throws Exception{
         BorderPane bp = new BorderPane();
         Pane pane = new Pane();
         Button Novo = new Button("Novo");
+        Novo.setStyle("-fx-font: 15 arial; -fx-base: #99CC32;");
         Button Salvar = new Button("Salvar");
+        Salvar.setStyle("-fx-font: 15 arial; -fx-base: #FFFF00;");
         Button Sair = new Button("Sair");
+        Sair.setStyle("-fx-font: 15 arial; -fx-base: #ff0000;");
         RadioButton aresta = new RadioButton("Aresta");
+        aresta.setStyle("-fx-font: 15 arial;");
         RadioButton vertice= new RadioButton("Vértice");
+        vertice.setStyle("-fx-font: 15 arial;");
         ToggleGroup opcao = new ToggleGroup();
         opcao.getToggles().addAll(vertice,aresta);
         ToolBar toolBar = new ToolBar();
@@ -64,15 +72,17 @@ public class GrafoMain extends Application {
         Label quantidadel = new Label();
         quantidadel.setFont(new Font("Cambria", 20));
         quantidadel.setText("Arestas: " + qtdL.size());
-        String hexC = toRGBCode(colorPicker.getValue());
-        String hexL = toRGBCode(colorPicker2.getValue());
-
+        Label arestasobrepostas = new Label();
+        arestasobrepostas.setFont(new Font("Cambria", 15));
+        arestasobrepostas.setText("Arestas Sobrepostas: " + arestasSP);
         Novo.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 pane.getChildren().clear();
                 qtdL.clear();
                 qtdV.clear();
+                arestasSP=0;
+                arestasobrepostas.setText("Arestas Sobrepostas: " + arestasSP);
                 quantidadev.setText("Vértices: 0");
                 quantidadel.setText("Arestas: 0");
             }
@@ -88,9 +98,13 @@ public class GrafoMain extends Application {
                 }
                 PrintWriter gravarArq = new PrintWriter(arq);
                 for(Circle Vertice : qtdV){
+                    Color c = (Color) Vertice.getFill();
+                    String hexC = toRGBCode(c);
                     gravarArq.printf("<svg height=\""+pane.getHeight()+ "\" width=\""+pane.getWidth()+"\"> <circle cx=\""+Vertice.getCenterX()+"\" cy=\""+Vertice.getCenterY()+"\" r=\""+Vertice.getRadius()+"\" stroke=\""+Vertice.getStroke()+"\" stroke-width=\""+Vertice.getStrokeWidth()+"\" fill=\""+ hexC +"\"/> </svg>");
                 }
                 for(Line Aresta : qtdL){
+                    Color c = (Color)Aresta.getFill();
+                    String hexL = toRGBCode(c);
                     gravarArq.printf("<svg height=\""+pane.getHeight()+"\" width=\""+pane.getWidth()+"\"> <line x1=\""+Aresta.getStartX()+"\" y1="+Aresta.getStartY()+"\" x2=\""+Aresta.getEndX()+"\" y2=\""+Aresta.getEndY()+"\" style=\"stroke:"+hexL+";stroke-width:"+Aresta.getStrokeWidth()+ "px\"/> </svg>");
                 }
                 try {
@@ -130,6 +144,7 @@ public class GrafoMain extends Application {
                             Aresta.setStrokeWidth(Double.parseDouble(tamanhoAN.getText()));
                             Aresta.setStroke(colorPicker2.getValue());
                             qtdL.add(Aresta);
+                            adicionado=true;
                             quantidadel.setText("Arestas: " + qtdL.size());
                             pane.getChildren().addAll(Aresta);
                         }
@@ -141,12 +156,32 @@ public class GrafoMain extends Application {
             public void handle(MouseEvent e) {
                 if(!estadoatual){
                     Vertice.setRadius(Double.parseDouble(tamanhoVN.getText()));
-                }else{
+                }else {
                     Aresta.setEndX(e.getX());
                     Aresta.setEndY(e.getY());
                 }
             }
         });
+        pane.setOnMouseReleased(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                if (estadoatual) {
+                    if (adicionado) {
+                        System.out.println("Adicionado");
+                        for (Line aresta : qtdL) {
+                            if(aresta==Aresta)continue;
+                            Shape intersect = Shape.intersect(Aresta, aresta);
+                            if (intersect.getBoundsInLocal().getWidth() != -1) {
+                                arestasSP++;
+                            }
+                        }
+                        arestasobrepostas.setText("Arestas Sobrepostas: " + arestasSP);
+                    }
+                }
+            }
+        });
+
+
         toolBar.getItems().addAll(Novo, Salvar, Sair, new Separator());
         tbOpcoes.getItems().addAll(
                 new Separator(),
@@ -165,7 +200,8 @@ public class GrafoMain extends Application {
                 tamanhoAN,
                 new Separator(),
                 quantidadev,
-                quantidadel
+                quantidadel,
+                arestasobrepostas
         );
         bp.setCenter(pane);
         bp.setTop(toolBar);
@@ -177,12 +213,13 @@ public class GrafoMain extends Application {
         stage.setTitle("Editor de Grafos");
         stage.show();
     }
-    public static String toRGBCode( Color color )
+
+    public static String toRGBCode(Color c )
     {
         return String.format( "#%02X%02X%02X",
-                (int)( color.getRed() * 255 ),
-                (int)( color.getGreen() * 255 ),
-                (int)( color.getBlue() * 255 ) );
+                (int)( c.getRed() * 255 ),
+                (int)( c.getGreen() * 255 ),
+                (int)( c.getBlue() * 255 ) );
 
 
     }
