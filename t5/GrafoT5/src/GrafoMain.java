@@ -80,6 +80,8 @@ public class GrafoMain extends Application {
                 pane.getChildren().clear();
                 qtdL.clear();
                 qtdV.clear();
+                coreshexA.clear();
+                coreshexV.clear();
                 arestasSP = 0;
                 arestasobrepostas.setText("Arestas Sobrepostas: " + arestasSP);
                 quantidadev.setText("Vértices: 0");
@@ -144,8 +146,6 @@ public class GrafoMain extends Application {
                             Aresta.setStartY(Vertice.getCenterY());
                             Aresta.setStrokeWidth(Double.parseDouble(tamanhoAN.getText()));
                             Aresta.setStroke(colorPicker2.getValue());
-                            qtdL.add(Aresta);
-                            quantidadel.setText("Arestas: " + qtdL.size());
                             pane.getChildren().addAll(Aresta);
                         }
                     }
@@ -171,7 +171,8 @@ public class GrafoMain extends Application {
                         if (Math.pow(Aresta.getEndX() - vertice.getCenterX(), 2) + Math.pow(Aresta.getEndY() - vertice.getCenterY(), 2) < Math.pow(vertice.getRadius(), 2)) {
                             Aresta.setEndX(vertice.getCenterX());
                             Aresta.setEndY(vertice.getCenterY());
-
+                            qtdL.add(Aresta);
+                            quantidadel.setText("Arestas: " + qtdL.size());
                             adicionado = true;
                         }
                     }
@@ -181,11 +182,11 @@ public class GrafoMain extends Application {
                         b = colorPicker2.getValue().getBlue();
                         coreshexA.add(toRGBCode(r,g,b));
                         for (Line aresta : qtdL) {
-                            if (aresta == Aresta
-                                    || (Aresta.getStartX() == aresta.getStartX() && Aresta.getStartY() == aresta.getStartY())
-                                    || (Aresta.getEndX() == aresta.getEndX() && Aresta.getEndX() == aresta.getEndY())
-                                    || (Aresta.getStartX() == aresta.getEndX() && Aresta.getStartY() == aresta.getEndY())
-                                    || (Aresta.getEndX() == aresta.getStartX() && Aresta.getEndY()==aresta.getStartY()))
+                            if (Aresta==aresta
+                                    || (Aresta.getStartX() == aresta.getStartX()
+                                    || Aresta.getStartX() == aresta.getEndX())
+                                    || (Aresta.getEndY() == aresta.getStartY()
+                                    || Aresta.getEndY() == aresta.getEndY()))
                                 continue;
                             Shape intersect = Shape.intersect(Aresta, aresta);
                             if (intersect.getBoundsInLocal().getWidth() != -1) {
