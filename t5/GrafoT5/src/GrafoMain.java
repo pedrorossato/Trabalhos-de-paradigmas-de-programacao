@@ -171,12 +171,12 @@ public class GrafoMain extends Application {
                         if (Math.pow(Aresta.getEndX() - vertice.getCenterX(), 2) + Math.pow(Aresta.getEndY() - vertice.getCenterY(), 2) < Math.pow(vertice.getRadius(), 2)) {
                             Aresta.setEndX(vertice.getCenterX());
                             Aresta.setEndY(vertice.getCenterY());
-                            qtdL.add(Aresta);
-                            quantidadel.setText("Arestas: " + qtdL.size());
                             adicionado = true;
                         }
                     }
-                    if (adicionado) {
+                    if (adicionado && (Aresta.getStartX() != Aresta.getEndX() && Aresta.getStartY() != Aresta.getEndY())) {
+                        qtdL.add(Aresta);
+                        quantidadel.setText("Arestas: " + qtdL.size());
                         r = colorPicker2.getValue().getRed();
                         g = colorPicker2.getValue().getGreen();
                         b = colorPicker2.getValue().getBlue();
