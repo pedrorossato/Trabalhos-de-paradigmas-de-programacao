@@ -240,7 +240,7 @@ public class GrafoMain extends Application {
                 (int) (g * 255),
                 (int) (b * 255));
     }
-    private static void main (String[] args){
+    public static void main (String[] args){
         launch(args);
     }
 }
