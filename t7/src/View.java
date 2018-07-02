@@ -16,7 +16,6 @@ public class View extends Application {
 
     private TableView<Model> table = new TableView<>();
 
-
     private Controller control = new Controller();
 
     public static void main(String[] args) {
@@ -62,6 +61,7 @@ public class View extends Application {
         table.setItems(control.getdata());
 
         Button btnpuxardados = new Button("Puxar dados");
+        Button btndadosoff = new Button("Ler de arquivo JSON");
 
         PieChart Graficotorta = new PieChart();
 
@@ -72,13 +72,22 @@ public class View extends Application {
         BarChart grafico = new BarChart<>(X,Y);
 
         btnpuxardados.setOnAction(event -> {
-                control.puxardados();
-                total.setText("Total de veiculos:"+ control.getdatasize());
-                control.atualizapiechart(Graficotorta);
-                control.atualizabarchart(grafico);
-                primeiradata.setText("Data menos recente : " + control.primeira());
-                ultimadata.setText("Data mais recente : " + control.ultima());
-                horaatual.setText("Última leitura do servidor : "+ control.gethora());
+            control.puxardados();
+            total.setText("Total de veiculos:"+ control.getdatasize());
+            control.atualizapiechart(Graficotorta);
+            control.atualizabarchart(grafico);
+            primeiradata.setText("Data menos recente : " + control.primeira());
+            ultimadata.setText("Data mais recente : " + control.ultima());
+            horaatual.setText("Última leitura do servidor : "+ control.gethora());
+        });
+        btndadosoff.setOnAction(event -> {
+            control.puxadadosoff(stage);
+            total.setText("Total de veiculos:"+ control.getdatasize());
+            control.atualizapiechart(Graficotorta);
+            control.atualizabarchart(grafico);
+            primeiradata.setText("Data menos recente : " + control.primeira());
+            ultimadata.setText("Data mais recente : " + control.ultima());
+            horaatual.setText("Última leitura do servidor : "+ control.gethora());
         });
         HBox hBox1 = new HBox();
         VBox vbox1 = new VBox();
@@ -87,12 +96,12 @@ public class View extends Application {
         table.setMinWidth(600);
         table.setMinHeight(400);
         vbox1.setPadding(new Insets(10, 10, 10, 10));
-        vbox1.getChildren().addAll(label, table, btnpuxardados, primeiradata, ultimadata, horaatual);
+        vbox1.getChildren().addAll(label, table, btnpuxardados, btndadosoff, primeiradata, ultimadata, horaatual);
         vbox1.applyCss();
         vbox1.layout();
         hbox2.getChildren().addAll( Graficotorta, grafico );
         hbox2.setPadding(new Insets(15,10,10,10));
-        hbox2.setSpacing(0);
+        hbox2.setSpacing(15);
         hBox1.getChildren().addAll(vbox1,hbox2);
 
         Scene scene = new Scene(hBox1, 1200, 700);

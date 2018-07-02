@@ -23,19 +23,8 @@ public class Model {
         return datahora.get();
     }
 
-    public void setdata(String data) {
-        this.datahora.set(data);
-    }
-
     public StringProperty dataProperty() {
         return datahora;
-    }
-    public String getordem() {
-        return ordem.get();
-    }
-
-    public void setordem(String ordem) {
-        this.ordem.set(ordem);
     }
 
     public StringProperty ordemProperty() {
@@ -50,29 +39,21 @@ public class Model {
     public StringProperty linhaProperty(){
         return linha;
     }
-    public String getlatitude(){
+    public String getlatitude(){ //usat para o mapa
         return latitude.get();
-    }
-    public void setLatitude(String latitude){
-        this.latitude.set(latitude);
     }
     public StringProperty latitudeProperty(){
         return latitude;
     }
-    public String getlongitude(){
+    public String getlongitude(){ //usar para o mapa
         return longitude.get();
     }
-    public void setlongitude(String latitude){
-        this.latitude.set(latitude);
-    }
+
     public StringProperty longitudeProperty(){
         return longitude;
     }
     public double getvelocidade(){
         return Double.parseDouble(velocidade.get());
-    }
-    public void setvelocidade(String velocidade){
-        this.velocidade.set(velocidade);
     }
     public StringProperty velocidadeProperty(){
         return velocidade;
