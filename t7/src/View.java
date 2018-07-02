@@ -60,7 +60,7 @@ public class View extends Application {
 
         table.setItems(control.getdata());
 
-        Button btnpuxardados = new Button("Puxar dados");
+        Button btnpuxardados = new Button("Puxar dados Online");
         Button btndadosoff = new Button("Ler de arquivo JSON");
 
         PieChart Graficotorta = new PieChart();
