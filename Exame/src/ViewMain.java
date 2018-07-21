@@ -27,20 +27,35 @@ public class ViewMain extends Application {
         //Gera o ovo em uma posição aleatória
         int Xovo = random.nextInt(799)+1;
         int Yovo = random.nextInt(599)+1;
-        ovo= new Ovo(Xovo,Yovo);
+        ovo = new Ovo(Xovo,Yovo);
+        snake= new Snake(XSnake,YSnake,5);
+
         AnimationTimer fps = new AnimationTimer() {
             @Override
             public void handle(long now) {
-                XSnake=XSnake+20;
-                snake = new Snake(XSnake,YSnake,5);
-                for(Circle C: snake.getCobra()){
-                    pane.getChildren().add(C);
+                for (int i = snake.cobra.size()-1; i > 0; i--) {
+                    snake.cobra.get(i).setCenterX(snake.cobra.get(i-1).getCenterX());
+                    snake.cobra.get(i).setCenterY(snake.cobra.get(i-1).getCenterY());
                 }
-                snake.limpacobra();
+                if(snake.direcao=='d') {
+                    snake.cobra.get(0).setCenterX(snake.cobra.get(0).getCenterX()+20);
+                }
+                if(snake.direcao=='e'){
+                    snake.cobra.get(0).setCenterX(snake.cobra.get(0).getCenterX()-20);
+                }
+                if(snake.direcao=='c'){
+                    snake.cobra.get(0).setCenterY(snake.cobra.get(0).getCenterY()+20);
+                }
+                if(snake.direcao=='b'){
+                    snake.cobra.get(0).setCenterY(snake.cobra.get(0).getCenterY()-20);
+                }
             }
         };
         fps.start();
-        pane.getChildren().addAll(ovo.getOvo());
+        for(Circle c : snake.getCobra()){
+            pane.getChildren().add(c);
+        }
+        pane.getChildren().add(ovo.getOvo());
         ToolBar tb = new ToolBar();
         bp.setCenter(pane);
         Scene scene = new Scene(bp, 800, 600);
