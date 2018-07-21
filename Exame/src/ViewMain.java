@@ -31,14 +31,15 @@ public class ViewMain extends Application {
         AnimationTimer fps = new AnimationTimer() {
             @Override
             public void handle(long now) {
-                snake.limpacobra();
                 XSnake=XSnake+20;
                 snake = new Snake(XSnake,YSnake,5);
+                for(Circle C: snake.getCobra()){
+                    pane.getChildren().add(C);
+                }
+                snake.limpacobra();
             }
         };
-        for(Circle C: snake.getCobra()){
-            pane.getChildren().add(C);
-        }
+        fps.start();
         pane.getChildren().addAll(ovo.getOvo());
         ToolBar tb = new ToolBar();
         bp.setCenter(pane);
