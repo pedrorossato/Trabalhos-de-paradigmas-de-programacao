@@ -1,7 +1,8 @@
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Ellipse;
+import javafx.scene.shape.Shape;
 
-public class Ovo extends Ellipse {
+public class Ovo extends Shape {
     public static final Color cordoovo = Color.BEIGE;
     private Ellipse Ovo;
 
@@ -9,9 +10,18 @@ public class Ovo extends Ellipse {
         Ovo = new Ellipse();
         Ovo.setCenterX(x);
         Ovo.setCenterY(y);
-        Ovo.setRadiusX(20);
-        Ovo.setRadiusY(40);
+        Ovo.setRadiusX(6);
+        Ovo.setRadiusY(8);
         Ovo.setFill(cordoovo);
+        Ovo.setStroke(Color.BLACK);
+    }
+
+    public Ellipse getOvo() {
+        return Ovo;
+    }
+
+    public void setOvo(Ellipse ovo) {
+        Ovo = ovo;
     }
 
     public void setPosicao(double x, double y) {

@@ -4,34 +4,46 @@ import javafx.scene.shape.Circle;
 import java.util.ArrayList;
 
 public class Snake {
-    public static Circle Cabeca;
-    public static final Color CabecaCor = Color.BLACK;
-    public static final Color CorpoCor = Color.WHITE;
-    int tamanho = 1;
-    String direcao;
-    ArrayList<Circle> corpo = new ArrayList<>();
+    private static final Color CabecaCor = Color.BLACK;
+    private static final Color CorpoCor = Color.GREEN;
+    public int tamanho;
+    public char direcao = 'd';
+    ArrayList<Circle> cobra = new ArrayList<>();
 
-    public static Color getCabeca() {
-        return CabecaCor;
+
+    Snake(int xcabeca, int ycabeca, int tam) {
+        tamanho=tam;
+            switch (direcao) {
+                case 'd':
+                    for (int i = 0; i < tamanho; i++) {
+                        Circle c = new Circle();
+                        cobra.add(c);
+                        if (cobra.get(0) == c) {
+                            c.setCenterX(xcabeca);
+                            c.setCenterY(ycabeca);
+                            c.setFill(CabecaCor);
+                            c.setRadius(10);
+                        } else {
+                            c.setCenterX(cobra.get(i - 1).getCenterX() - 20);
+                            c.setCenterY(cobra.get(i - 1).getCenterY());
+                            c.setFill(CorpoCor);
+                            c.setRadius(10);
+                        }
+                    }
+            }
     }
-
-    public static Color getCorpo() {
-        return CorpoCor;
+    public void limpacobra(){
+        cobra.clear();
+    }
+    public ArrayList<Circle> getCobra() {
+        return cobra;
     }
 
     public int getTamanho() {
         return tamanho;
     }
 
-    public String getDirecao() {
-        return direcao;
-    }
-
     public void setTamanho(int tamanho) {
         this.tamanho = tamanho;
-    }
-
-    public void setDirecao(String direcao) {
-        this.direcao = direcao;
     }
 }
