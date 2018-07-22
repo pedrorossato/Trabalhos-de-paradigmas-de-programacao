@@ -28,7 +28,7 @@ public class ViewMain extends Application {
         Pane pane = new Pane();
         BorderPane bp = new BorderPane();
         //Menu
-        Menu Jogo = new Menu("Jogo");
+        Menu Menu = new Menu("Menu");
         //Botões menu
         MenuItem Reiniciar= new MenuItem("Reiniciar");
         Reiniciar.setOnAction(event ->
@@ -36,10 +36,10 @@ public class ViewMain extends Application {
         );
         MenuItem Fechar = new MenuItem("Fechar");
         Fechar.setOnAction(event ->  System.exit(1));
-        Jogo.getItems().addAll(Reiniciar,Fechar);
+        Menu.getItems().addAll(Reiniciar,Fechar);
         //Bar
         MenuBar menubar = new MenuBar();
-        menubar.getMenus().add(Jogo);
+        menubar.getMenus().add(Menu);
 
         bp.setCenter(pane);
         bp.setTop(menubar);
