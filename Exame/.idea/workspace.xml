@@ -15,8 +15,8 @@
       <file leaf-file-name="Snake.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Snake.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="15" column="15" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
+            <state relative-caret-position="349">
+              <caret line="52" column="87" selection-start-line="52" selection-start-column="87" selection-end-line="52" selection-end-column="87" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -27,14 +27,24 @@
       <file leaf-file-name="ViewMain.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ViewMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="80" column="17" lean-forward="true" selection-start-line="80" selection-start-column="17" selection-end-line="80" selection-end-column="17" />
+            <state relative-caret-position="213">
+              <caret line="52" column="25" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1113#3497#0" expanded="true" />
-                <element signature="e#3496#3497#0" expanded="true" />
                 <element signature="e#4500#4501#0" expanded="true" />
                 <element signature="e#4528#4529#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Animacao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Animacao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="48" column="40" selection-start-line="48" selection-start-column="40" selection-end-line="48" selection-end-column="40" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -43,7 +53,7 @@
       <file leaf-file-name="Ovo.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Ovo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
+            <state relative-caret-position="17">
               <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -65,8 +75,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/ViewEmJogo.java" />
-        <option value="$PROJECT_DIR$/src/Snake.java" />
         <option value="$PROJECT_DIR$/src/Ovo.java" />
+        <option value="$PROJECT_DIR$/src/Snake.java" />
+        <option value="$PROJECT_DIR$/src/Animacao.java" />
         <option value="$PROJECT_DIR$/src/ViewMain.java" />
       </list>
     </option>
@@ -80,7 +91,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-20" />
     <option name="y" value="-10" />
     <option name="width" value="1346" />
@@ -90,7 +101,27 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Exame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Exame" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Exame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Exame" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -177,12 +208,12 @@
       <workItem from="1532010622738" duration="5763000" />
       <workItem from="1532100212926" duration="25417000" />
       <workItem from="1532215988543" duration="7577000" />
-      <workItem from="1532224512027" duration="1386000" />
+      <workItem from="1532224512027" duration="9218000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44418000" />
+    <option name="totallyTimeSpent" value="52250000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -202,7 +233,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.24963397" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18008785" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -256,8 +287,6 @@
           <caret line="109" column="49" selection-start-line="109" selection-start-column="49" selection-end-line="109" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1113#3497#0" expanded="true" />
-            <element signature="e#3496#3497#0" expanded="true" />
             <element signature="e#4500#4501#0" expanded="true" />
             <element signature="e#4528#4529#0" expanded="true" />
           </folding>
@@ -290,8 +319,6 @@
           <caret line="65" column="17" lean-forward="true" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1113#3497#0" expanded="true" />
-            <element signature="e#3496#3497#0" expanded="true" />
             <element signature="e#4500#4501#0" expanded="true" />
             <element signature="e#4528#4529#0" expanded="true" />
           </folding>
@@ -314,8 +341,6 @@
           <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1113#3497#0" expanded="true" />
-            <element signature="e#3496#3497#0" expanded="true" />
             <element signature="e#4500#4501#0" expanded="true" />
             <element signature="e#4528#4529#0" expanded="true" />
           </folding>
@@ -358,8 +383,6 @@
           <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1113#3497#0" expanded="true" />
-            <element signature="e#3496#3497#0" expanded="true" />
             <element signature="e#4500#4501#0" expanded="true" />
             <element signature="e#4528#4529#0" expanded="true" />
           </folding>
@@ -380,9 +403,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Snake.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="52" column="87" selection-start-line="52" selection-start-column="87" selection-end-line="52" selection-end-column="87" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Ovo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
+        <state relative-caret-position="17">
           <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -390,10 +423,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Snake.java">
+    <entry file="file://$PROJECT_DIR$/src/Animacao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="15" column="15" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
+        <state relative-caret-position="162">
+          <caret line="48" column="40" selection-start-line="48" selection-start-column="40" selection-end-line="48" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -402,12 +435,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ViewMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="80" column="17" lean-forward="true" selection-start-line="80" selection-start-column="17" selection-end-line="80" selection-end-column="17" />
+        <state relative-caret-position="213">
+          <caret line="52" column="25" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1113#3497#0" expanded="true" />
-            <element signature="e#3496#3497#0" expanded="true" />
             <element signature="e#4500#4501#0" expanded="true" />
             <element signature="e#4528#4529#0" expanded="true" />
           </folding>

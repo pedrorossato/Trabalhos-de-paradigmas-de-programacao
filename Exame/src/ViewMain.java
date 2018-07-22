@@ -1,8 +1,7 @@
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ToolBar;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
@@ -21,74 +20,38 @@ import java.util.Random;
 public class ViewMain extends Application {
     private Snake snake;
     private Ovo ovo;
+    private Animacao fps;
     private Random random = new Random();
-
 
     @Override
     public void start(Stage stage) throws Exception{
         Pane pane = new Pane();
         BorderPane bp = new BorderPane();
+        //Menu
+        Menu Jogo = new Menu("Jogo");
+        //Botões menu
+        MenuItem Reiniciar= new MenuItem("Reiniciar");
+        Reiniciar.setOnAction(event ->
+            snake.Reiniciar()
+        );
+        MenuItem Fechar = new MenuItem("Fechar");
+        Fechar.setOnAction(event ->  System.exit(1));
+        Jogo.getItems().addAll(Reiniciar,Fechar);
+        //Bar
+        MenuBar menubar = new MenuBar();
+        menubar.getMenus().add(Jogo);
         //Gera o ovo em uma posição aleatória
-        int Xovo = random.nextInt(799)+1;
-        int Yovo = random.nextInt(599)+1;
+        int Xovo = random.nextInt(759)+10;
+        int Yovo = random.nextInt(559)+10;
         ovo = new Ovo(Xovo,Yovo);
         snake= new Snake(400,300,3);
-
-        AnimationTimer fps = new AnimationTimer() {
-            @Override
-            public void handle(long now) {
-                try {Thread.sleep(100);
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
-                }
-                for (int i = snake.cobra.size()-1; i > 0; i--) {
-                    snake.cobra.get(i).setCenterX(snake.cobra.get(i-1).getCenterX());
-                    snake.cobra.get(i).setCenterY(snake.cobra.get(i-1).getCenterY());
-                }
-                if(snake.direcao=='d') {
-                    snake.cobra.get(0).setCenterX(snake.cobra.get(0).getCenterX()+20);
-                }
-                if(snake.direcao=='e'){
-                    snake.cobra.get(0).setCenterX(snake.cobra.get(0).getCenterX()-20);
-                }
-                if(snake.direcao=='c'){
-                    snake.cobra.get(0).setCenterY(snake.cobra.get(0).getCenterY()-20);
-                }
-                if(snake.direcao=='b'){
-                    snake.cobra.get(0).setCenterY(snake.cobra.get(0).getCenterY()+20);
-                }
-                Shape intersect = Shape.intersect(ovo.getOvo(),snake.getCobra().get(0));
-                if(intersect.getBoundsInLocal().getWidth() != -1){
-                    pane.getChildren().add(snake.addCircle());
-                    pane.getChildren().remove(ovo.getOvo());
-                    int Xovo = random.nextInt(799)+1;
-                    int Yovo = random.nextInt(599)+1;
-                    ovo = new Ovo(Xovo,Yovo);
-                    pane.getChildren().add(ovo.getOvo());
-                }
-                if(snake.cobra.get(0).getCenterX()>799 || snake.cobra.get(0).getCenterY()>599) {
-                    Alert alerta = new Alert(Alert.AlertType.INFORMATION);
-                    alerta.setTitle("Fim de Jogo");
-                    alerta.setHeaderText("A cobra se chocou contra os limites do infinito!");
-                    alerta.setContentText("Tente de novo!");
-                }
-
-                for(int i =1; i<snake.getCobra().size();i++){
-                    Shape intersect1 = Shape.intersect(snake.getCobra().get(0),snake.getCobra().get(i));
-                    if(intersect1.getBoundsInLocal().getWidth() != -1){
-                        System.out.println("IN SHOOOOCKKK");
-                    }
-                }
-            }
-        };
-        fps.start();
-
-
+        fps = new Animacao(snake,ovo,pane);
         for(Circle c : snake.getCobra()){
             pane.getChildren().add(c);
         }
         pane.getChildren().add(ovo.getOvo());
         bp.setCenter(pane);
+        bp.setTop(menubar);
         Scene scene = new Scene(bp, 800, 600);
         scene.setOnKeyPressed(event -> {
             switch (event.getCode()){
@@ -118,6 +81,14 @@ public class ViewMain extends Application {
         stage.setScene(scene);
         stage.setTitle("Jogo Snake JavaFX");
         stage.show();
+        Alert gamestart = new Alert(Alert.AlertType.INFORMATION);
+        gamestart.setTitle("Snake Game");
+        gamestart.setHeaderText("Bem vindo ao jogo");
+        gamestart.setContentText("Seu objetivo é comer os ovos sem bater nos limites da janela e se chocar contra sim mesma");
+        gamestart.show();
+        gamestart.setOnHidden(event ->
+                fps.start()
+        );
     }
     public static void main (String[] args){
         launch(args);

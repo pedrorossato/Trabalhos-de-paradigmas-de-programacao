@@ -8,6 +8,7 @@ public class Snake {
     private static final Color CorpoCor = Color.GREEN;
     public int tamanho;
     public char direcao = 'd';
+    public Animacao fps;
     ArrayList<Circle> cobra = new ArrayList<>();
 
 
@@ -44,6 +45,13 @@ public class Snake {
         return this.direcao;
     }
 
+    public void Reiniciar(){
+        this.cobra.get(0).setCenterX(400);
+        this.cobra.get(0).setCenterY(300);
+        this.tamanho=3;
+        this.direcao='d';
+        // Falta reiniciar o thread, tentei com wait e notify, mas dá exception no wait
+    }
     public void limpacobra(){
         cobra.clear();
     }
