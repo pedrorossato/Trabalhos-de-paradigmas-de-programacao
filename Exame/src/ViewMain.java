@@ -21,8 +21,8 @@ import java.util.Random;
 public class ViewMain extends Application {
     private Snake snake;
     private Ovo ovo;
-    Random random = new Random();
-    private int XSnake=400, YSnake=300;
+    private Random random = new Random();
+
 
     @Override
     public void start(Stage stage) throws Exception{
@@ -32,7 +32,7 @@ public class ViewMain extends Application {
         int Xovo = random.nextInt(799)+1;
         int Yovo = random.nextInt(599)+1;
         ovo = new Ovo(Xovo,Yovo);
-        snake= new Snake(XSnake,YSnake,3);
+        snake= new Snake(400,300,3);
 
         AnimationTimer fps = new AnimationTimer() {
             @Override
@@ -66,16 +66,23 @@ public class ViewMain extends Application {
                     ovo = new Ovo(Xovo,Yovo);
                     pane.getChildren().add(ovo.getOvo());
                 }
-                if(snake.cobra.get(0).getCenterX()>799 || snake.cobra.get(0).getCenterY()>599){
+                if(snake.cobra.get(0).getCenterX()>799 || snake.cobra.get(0).getCenterY()>599) {
                     Alert alerta = new Alert(Alert.AlertType.INFORMATION);
                     alerta.setTitle("Fim de Jogo");
                     alerta.setHeaderText("A cobra se chocou contra os limites do infinito!");
                     alerta.setContentText("Tente de novo!");
+                }
 
+                for(int i =1; i<snake.getCobra().size();i++){
+                    Shape intersect1 = Shape.intersect(snake.getCobra().get(0),snake.getCobra().get(i));
+                    if(intersect1.getBoundsInLocal().getWidth() != -1){
+                        System.out.println("IN SHOOOOCKKK");
+                    }
                 }
             }
         };
         fps.start();
+
 
         for(Circle c : snake.getCobra()){
             pane.getChildren().add(c);
