@@ -32,7 +32,7 @@ public class ViewMain extends Application {
         //Botões menu
         MenuItem Reiniciar= new MenuItem("Reiniciar");
         Reiniciar.setOnAction(event ->
-            snake.Reiniciar()
+                reiniciar(pane)
         );
         MenuItem Fechar = new MenuItem("Fechar");
         Fechar.setOnAction(event ->  System.exit(1));
@@ -40,16 +40,7 @@ public class ViewMain extends Application {
         //Bar
         MenuBar menubar = new MenuBar();
         menubar.getMenus().add(Jogo);
-        //Gera o ovo em uma posição aleatória
-        int Xovo = random.nextInt(759)+10;
-        int Yovo = random.nextInt(559)+10;
-        ovo = new Ovo(Xovo,Yovo);
-        snake= new Snake(400,300,3);
-        fps = new Animacao(snake,ovo,pane);
-        for(Circle c : snake.getCobra()){
-            pane.getChildren().add(c);
-        }
-        pane.getChildren().add(ovo.getOvo());
+
         bp.setCenter(pane);
         bp.setTop(menubar);
         Scene scene = new Scene(bp, 800, 600);
@@ -84,11 +75,25 @@ public class ViewMain extends Application {
         Alert gamestart = new Alert(Alert.AlertType.INFORMATION);
         gamestart.setTitle("Snake Game");
         gamestart.setHeaderText("Bem vindo ao jogo");
-        gamestart.setContentText("Seu objetivo é comer os ovos sem bater nos limites da janela e se chocar contra sim mesma");
+        gamestart.setContentText("Use as setas do teclado para jogar");
         gamestart.show();
         gamestart.setOnHidden(event ->
-                fps.start()
+                reiniciar(pane)
         );
+    }
+    public void reiniciar(Pane pane) {
+        System.out.println("Iniciando jogo...");
+        pane.getChildren().clear();
+        int Xovo = random.nextInt(759)+10;
+        int Yovo = random.nextInt(559)+10;
+        ovo = new Ovo(Xovo,Yovo);
+        snake= new Snake(400,300,3);
+        fps = new Animacao(snake,ovo,pane);
+        for(Circle c : snake.getCobra()){
+            pane.getChildren().add(c);
+        }
+        pane.getChildren().add(ovo.getOvo());
+        fps.start();
     }
     public static void main (String[] args){
         launch(args);
