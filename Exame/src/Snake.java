@@ -29,9 +29,19 @@ public class Snake {
             }
         }
     }
+    public Circle addCircle (){
+        Circle c = new Circle();
+        c.setFill(CorpoCor);
+        c.setRadius(10);
+        cobra.add(c);
+        return c;
+    }
 
     public void setDirecao(char direcao) {
         this.direcao = direcao;
+    }
+    public char getDirecao(){
+        return this.direcao;
     }
 
     public void limpacobra(){
